@@ -1,4 +1,8 @@
 @import "../../css-config/mixins.scss";
-.main-home{
-    min-height: 1000px;
+.main-content{
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    @include md{
+        width: 1200px;
+    }
 }
