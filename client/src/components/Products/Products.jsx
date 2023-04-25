@@ -1,21 +1,20 @@
 import "./Products.scss";
 import Product from './Product/Product'
 
-const Products = ({secHeadHidden, products_heading}) => {
+const Products = ({products, secHeadHidden, products_heading}) => {
 
     return (
         <div className="product-container">
            {!secHeadHidden && <div className="section-heading">{products_heading}</div>}
            {/* <div className="section-heading" style={{ display: secHeadHidden ? 'none' : 'block' }}>Section Heading</div> */}
             <div className="products">
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
+                {products?.data?.map((item) => (
+                     <Product
+                      key={item.id}
+                      id={item.id}
+                      data={item.attributes} />
+                ))}
+               
             </div>
         </div>
     );
