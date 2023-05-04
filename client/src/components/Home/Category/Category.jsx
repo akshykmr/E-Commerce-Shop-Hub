@@ -11,7 +11,7 @@ const Category = ({categories}) => {
         <div className="shop-by-category">
             <div className="category">
                {categories?.data?.map((item) => ( // this is called option chaining ? mark do not allow the code to execute ahead till the first element get the data from api
-                    <div key={item.id} className="categories" onClick={()=>navigate(`/Category/$(item.id)`)}>
+                    <div key={item.id} className="categories" onClick={() => navigate(`/category/${item.id}`)}>
                       <img src={process.env.REACT_APP_STRIPE_APP_DEV_URL + item.attributes.img.data.attributes.url} alt="" />
                     </div>  
                 ))} 

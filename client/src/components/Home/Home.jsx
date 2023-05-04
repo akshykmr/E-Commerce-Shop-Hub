@@ -9,7 +9,7 @@ import { Context } from "../../utils/context";
 
 const Home = () => {
 
-    const {categories, setCategories, products, setProducts} = useContext(Context)
+    const {categories, setCategories, products, setProducts} = useContext(Context); 
 
     useEffect(()  => {
         getProducts();

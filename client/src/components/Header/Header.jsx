@@ -8,6 +8,7 @@ import "./Header.scss";
 import { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Search from './Search/Search'
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -17,6 +18,9 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [showCart, setshowCart] = useState(false);
     const [showSearch, setshowSearch] = useState(false);
+
+const navigate = useNavigate();
+
 
     const  handleCart=  () => {
         setshowCart(true);
@@ -44,11 +48,11 @@ const Header = () => {
             <div className="header-content">
                 <ul className="left">   {/* we have use "ul>li* 3" shortcut to create 3 unorder list items */}
                 
-                    <li>Home</li>
-                    <li>Categories</li>
-                    <li>About</li>
+                    <li onClick={() => navigate(`/`)} >Home</li>
+                    <li onClick={() => navigate(`/category`)} >Categories</li>
+                    <li onClick={() => navigate(`/about`)} >About</li>
                 </ul> 
-                <div className="center">SHOPHUB</div>
+                <div className="center" onClick={() => navigate(`/`)} >SHOPHUB</div>
                 <div className="right">
                     <TbSearch onClick={handleSearch}/>
                     <AiOutlineHeart/>
